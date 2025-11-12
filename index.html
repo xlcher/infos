@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="简洁响应式 H5 页面示例" />
+  <meta name="theme-color" content="#0ea5a4" />
+  <title>H5 页面示例</title>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071029 0%, #071834 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:20px;}
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:44px;height:44px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#022;
+      box-shadow:0 6px 18px rgba(6,182,212,0.12);
+    }
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{
+      color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600;font-size:14px;
+    }
+    nav a:hover{color:#fff;background:var(--glass)}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#7c3aed);
+      color:#021; padding:10px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer;
+      box-shadow:0 8px 24px rgba(7,89,94,0.18);
+    }
+    /* mobile menu button */
+    .menu-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
+    /* hero */
+    .hero{
+      display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:36px 0;
+    }
+    .hero-inner{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);padding:28px;}
+    h1{margin:0;font-size:28px;line-height:1.05}
+    p.lead{color:var(--muted);margin-top:10px}
+    .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+    .card.show{opacity:1;transform:none}
+    .muted{color:var(--muted);font-size:14px}
+    footer{margin-top:34px;padding:18px 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,0.03)}
+    /* responsive */
+    @media (max-width:880px){
+      .features{grid-template-columns:1fr}
+      nav{display:none}
+      .menu-toggle{display:inline-block}
+      .mobile-nav{display:none;position:fixed;inset:64px 12px 12px;border-radius:12px;background:linear-gradient(180deg,#061426, #07162a);padding:12px;box-shadow:0 12px 40px rgba(2,6,23,0.7)}
+      .mobile-nav a{display:block;padding:12px;border-radius:8px;color:var(--muted);text-decoration:none}
+      .mobile-nav a:hover{background:var(--glass);color:#fff}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">H5</div>
+        <div>
+          <div style="font-weight:800">示例 H5 页面</div>
+          <div style="font-size:12px;color:var(--muted)">轻量、响应式、移动优先</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#features">功能</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">立即体验</button>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+    </header>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>用最少的代码，快速搭建移动端 H5 页面</h1>
+        <p class="lead">响应式布局、触控优化、简单交互 —— 适用于活动页、产品落地页与产品预览。</p>
+        <div class="cta-row">
+          <button class="btn" onclick="alert('演示 CTA 被点击')">开始使用</button>
+          <a href="#features" style="align-self:center;color:var(--muted);text-decoration:none">了解更多 →</a>
+        </div>
+      </div>
+
+      <div style="padding:10px 4px">
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#34d399,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:800;color:#022">✓</div>
+            <div>
+              <div style="font-weight:700">轻量快速</div>
+              <div class="muted">快速加载、流畅体验</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="features" style="margin-top:6px">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:12px">
+        <div>
+          <h2 style="margin:0">核心功能</h2>
+          <div class="muted" style="margin-top:6px">适配各种屏幕与触控交互</div>
+        </div>
+        <div class="muted">100% 移动友好</div>
+      </div>
+
+      <div class="features" style="margin-top:14px">
+        <div class="card" data-ix>
+          <h3 style="margin:0 0 8px 0">响应式布局</h3>
+          <div class="muted">自动适配屏幕尺寸，无需额外配置。</div>
+        </div>
+        <div class="card" data-ix>
+          <h3 style="margin:0 0 8px 0">触控优化</h3>
+          <div class="muted">手势与触控交互体验友好。</div>
+        </div>
+        <div class="card" data-ix>
+          <h3 style="margin:0 0 8px 0">可定制样式</h3>
+          <div class="muted">易于拓展和个性化主题。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:22px">
+      <div style="display:flex;gap:18px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:220px">
+          <h3 style="margin:0">关于本页</h3>
+          <p class="muted" style="margin-top:8px">这是一个简洁模板，用于快速启动移动端页面。可直接复制并在项目中修改样式与内容。</p>
+        </div>
+        <div style="width:320px;min-width:220px;background:var(--glass);padding:12px;border-radius:10px">
+          <div style="font-weight:700">小提示</div>
+          <div class="muted" style="margin-top:6px">把按钮替换为你的表单或埋点，即刻开始活动推广。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:22px">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <div style="flex:1">
+          <h3 style="margin:0">联系我们</h3>
+          <div class="muted" style="margin-top:8px">想定制/集成？发邮件到 demo@example.com（示例）</div>
+        </div>
+        <div>
+          <button class="btn" onclick="alert('已发送请求（示例）')">发送请求</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>© 2025 H5 示例页</div>
+        <div class="muted">基于 HTML5 + CSS3，移动优先设计</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 简单交互脚本 -->
+  <script>
+    // 移动菜单开关
+    const toggle = document.getElementById('menuToggle');
+    let mobileNav;
+    toggle && toggle.addEventListener('click', ()=>{
+      if (!mobileNav){
+        mobileNav = document.createElement('div');
+        mobileNav.className = 'mobile-nav';
+        mobileNav.innerHTML = '<a href=\"#features\">功能</a><a href=\"#about\">关于</a><a href=\"#contact\">联系</a><a href=\"#\" onclick=\"location.reload();return false;\">刷新</a>';
+        document.body.appendChild(mobileNav);
+      }
+      mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // 元素进入视口时过渡显示
+    const observers = document.querySelectorAll('[data-ix]');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    },{threshold:0.12});
+    observers.forEach(el=>io.observe(el));
+
+    // 平滑滚动（现代浏览器大多支持）
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth'});
+          // 隐藏移动菜单（如果存在）
+          if (mobileNav) mobileNav.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+</div>
+</section>
+</div>
