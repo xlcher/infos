@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="简洁响应式 H5 页面示例" />
+  <meta name="description" content="资质证书查询" />
   <meta name="theme-color" content="#0ea5a4" />
   <title>资质证书查询</title>
   <style>
@@ -11,97 +11,89 @@
       font-size: 16px;
     }
     body {
-      font-size: 12px;
+      font-size: 0.375rem;
+      margin: 0;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    @media screen and (min-width: 375px) {
+      html {
+        font-size: 16px;
+      }
+      td {
+        border: 0.00625rem solid rgb(200, 198, 198);
+      }
+    }
+    @media screen and (min-width: 750px) {
+      html {
+        font-size: 40px;
+      }
+      td {
+        border: 0 none;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="main">
-    <header>建筑业企业资质证书</header>
-
-    <table border="1" cellspacing="0" cellpadding="5">
-      <tr>
-        <td colspan="2">
-          <label>企业名称：</label>
-          <span>xxx</span>
-        </td>
-      </tr>
-
-      <tr>
-        <td colspan="2">
-          <label>详细地址：</label>
-          <span>xxx</span>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>统一社会信用代码（或营业执照注册号）：</label>
-          <span>xxx</span>
-        </td>
-        <td>
-          <label>法人代表：</label>
-          <span>xxx</span>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>注册资本金：</label>
-          <span>xxx万元人民币</span>
-        </td>
-        <td>
-          <label>经济性质：</label>
-          <span>有限责任公司</span>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>证书编号：</label>
-          <span>xxx</span>
-        </td>
-        <td>
-          <label>有效期：</label>
-          <span>xx年xx月xx日</span>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>发证机关：</label>
-          <span>xxx</span>
-        </td>
-        <td>
-          <label>发证日期：</label>
-          <span>xx年xx月xx日</span>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>正本打印流水号：</label>
-          <span></span>
-        </td>
-        <td>
-          <label>副本打印流水号：</label>
-          <span></span>
-        </td>
-      </tr>
-
-      <tr>
-        <td colspan="2">
-          <label>资质范围：</label>
-          <span>xxx</span>
-        </td>
-      </tr>
-    </table>
+  <div style="width:100%; padding-top: 0.25rem;" align="center">
+    <span style="font-size: 0.5rem; font-family: '黑体';">建筑业企业资质证书</span>
   </div>
-  
+  <table
+    cellpadding="0"
+    cellspacing="1"
+    style="border-color: rgb(130, 129, 129); border-collapse: collapse; background-color: rgb(107, 106, 106); text-align: left; "
+    width="100%"
+    align="center"
+  >
+    <tbody>
+      <tr style="background-color: white;height:1em">
+        <td align="right" style="width:18%; height: 1em;">企业名称：</td>
+        <td colspan="3" style="height: 1em">魏县路通建筑材料有限公司</td>
+      </tr>
+      <tr style="background-color: white;height: 1em">
+        <td align="right">详细地址：</td>
+        <td colspan="3">魏县沙口集乡陈小屯村东南地</td>
+      </tr>
+      <tr style="background-color: white;height: 1em">
+        <td align="right" style="width:15%">
+          <div>统一社会信用代码</div>
+          <div>（或营业执照注册号）：</div>
+        </td>
+        <td style="width:35%">91130434MA0FUW2W6K</td>
+        <td align="right" style="width:15%">法人代表：</td>
+        <td style="width:35%">李海臣</td>
+      </tr>
+      <tr style="background-color: white;height: 1em">
+        <td align="right">注册资本金：</td>
+        <td>500.0万元人民币</td>
+        <td align="right">经济性质：</td>
+        <td>有限责任公司</td>
+      </tr>
+      <tr style="background-color: white;height: 1em">
+        <td align="right">证书编号：</td>
+        <td>D313023285</td>
+        <td align="right" style="height: 1em">有效期：</td>
+        <td style="height: 1em">2027年03月13日</td>
+      </tr>
+        
+      <tr style="background-color: white;height: 1em">
+        <td align="right" style="height: 1em">发证机关：</td>
+        <td style="height: 1em">邯郸市行政审批局</td>
+        <td align="right" style="height: 1em">发证日期：</td>
+        <td style="height: 1em">2022年03月14日</td>
+      </tr>
+      <tr style="background-color: white;height: 1em">
+        <td align="right" style="height: 1em">正本打印流水号：</td>
+        <td style="height: 1em"></td>
+        <td align="right" style="height: 1em">副本打印流水号：</td>
+        <td style="height: 1em"></td>
+      </tr>
+      <tr style="background-color: white;height: 1em">
+        <td align="right">资质范围：</td>
+        <td colspan="3">沥青混凝土加工、砼结构预制构件加工、销售；水泥稳定石拌合销售；市政道路工程施工、公路工程施工；建筑工程机械设备租赁；再生资源回收、利用、销售（不含危险废物品和违禁品）；商品混凝土销售。（法律法规禁限的除外）（依法须经批准的项目，经相关部门批准后方可开展经营活动）</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
-
 </html>
-</div>
-</section>
-</div>
